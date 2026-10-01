@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   EFEITO DE RUÍDO
+========================= */
+
+.ruido {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    z-index: 999;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            #fff 3px
+        );
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    min-height: 55vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: clamp(42px, 8vw, 90px);
+    letter-spacing: 8px;
+    margin: 15px 0;
+    font-weight: 800;
+}
+
+header p:last-child {
+    color: #888;
+    font-size: 15px;
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+.codigo {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #777;
+}
+
+main {
+    width: min(900px, 90%);
+    margin: auto;
+}
+
+
+/* =========================
+   FASES
+========================= */
+
+.fase {
+    position: relative;
+
+    background: #0a0a0a;
+
+    border: 1px solid #222;
+    border-radius: 14px;
+
+    padding: 45px;
+    margin-bottom: 50px;
+
+    box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.025);
+}
+
+.numero {
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.fase h2 {
+    font-size: 30px;
+    margin: 15px 0 30px;
+}
+
+.texto-enigma p {
+    color: #bbb;
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.dica {
+    color: #666;
+    font-size: 13px;
+    margin: 30px 0 20px;
+    font-style: italic;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input {
+    width: 100%;
+
+    background: #050505;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+input:focus {
+    border-color: #777;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+    background: #fff;
+    color: #000;
+
+    border: none;
+
+    padding: 14px 22px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #ddd;
+}
+
+.erro {
+    min-height: 18px;
+    color: #777;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   FASE 2
+========================= */
+
+.lista-palavras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.lista-palavras p {
+    background: #111;
+
+    border: 1px solid #222;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    color: #ccc;
+}
+
+.lista-palavras strong {
+    color: white;
+    float: right;
+}
+
+
+/* =========================
+   FASE 3
+========================= */
+
+.grade {
+    width: 240px;
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 5px;
+}
+
+.grade div {
+    aspect-ratio: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.grade div:hover {
+    background: #181818;
+}
+
+.movimentos {
+    text-align: center;
+
+    font-size: 24px;
+
+    letter-spacing: 8px;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   MORSE
+========================= */
+
+.morse {
+    text-align: center;
+
+    font-size: 34px;
+
+    letter-spacing: 8px;
+
+    margin: 40px 0;
+
+    font-family: monospace;
+}
+
+
+/* =========================
+   FASE 5
+========================= */
+
+.respostas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.respostas p {
+    padding: 15px;
+
+    background: #111;
+
+    border-left: 2px solid #555;
+
+    color: #bbb;
+}
+
+
+/* =========================
+   ESCONDIDO
+========================= */
+
+.escondida {
+    display: none;
+}
+
+
+/* =========================
+   FINAL NORMAL
+========================= */
+
+.final {
+    text-align: center;
+
+    padding: 100px 30px;
+
+    margin-bottom: 60px;
+
+    border-top: 1px solid #222;
+}
+
+.final h2 {
+    font-size: clamp(35px, 7vw, 70px);
+
+    margin: 20px 0 50px;
+
+    letter-spacing: 4px;
+}
+
+.mensagem-final {
+    max-width: 600px;
+    margin: auto;
+}
+
+.mensagem-final p {
+    color: #aaa;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+    margin: 20px 0;
+}
+
+.pequeno {
+    color: #444;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-top: 50px;
+}
+
+
+/* =========================
+   ÁREA DO SEGREDO
+========================= */
+
+.area-secreta {
+    margin-top: 90px;
+
+    padding-top: 40px;
+
+    border-top: 1px solid #151515;
+}
+
+.aviso-secreto {
+    color: #777;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SÍMBOLOS
+========================= */
+
+.simbolos-secretos {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.simbolo-secreto {
+    width: 60px;
+    height: 60px;
+
+    padding: 0;
+
+    background: #111;
+
+    color: #aaa;
+
+    border: 1px solid #333;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.25s;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.simbolo-secreto:hover {
+    color: white;
+
+    border-color: #777;
+
+    background: #181818;
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   FINAL SECRETO
+========================= */
+
+.final-secreto {
+    text-align: center;
+
+    padding: 100px 30px;
+
+    margin: 100px 0;
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    background: #080808;
+
+    box-shadow:
+        0 0 70px rgba(255, 255, 255, 0.04);
+}
+
+.final-secreto h2 {
+    font-size: clamp(35px, 7vw, 70px);
+
+    letter-spacing: 5px;
+
+    margin: 20px 0 50px;
+}
+
+.mensagem-secreta {
+    max-width: 650px;
+    margin: auto;
+}
+
+.mensagem-secreta p {
+    color: #aaa;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+
+    margin: 20px 0;
+}
+
+.mensagem-secreta .destaque {
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-top: 45px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        min-height: 45vh;
+    }
+
+    header h1 {
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+
+    .fase {
+        padding: 28px 20px;
+    }
+
+    .fase h2 {
+        font-size: 24px;
+    }
+
+    .lista-palavras {
+        grid-template-columns: 1fr;
+    }
+
+    .grade {
+        width: 210px;
+    }
+
+    .movimentos {
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+
+    .final {
+        padding: 70px 15px;
+    }
+
+    .final-secreto {
+        padding: 70px 15px;
+    }
+
+    .mensagem-secreta .destaque {
+        font-size: 24px;
+    }
+
+    .simbolos-secretos {
+        gap: 10px;
+    }
+
+    .simbolo-secreto {
+        width: 55px;
+        height: 55px;
+
+        font-size: 22px;
+    }
+
+    .aviso-secreto {
+        font-size: 13px;
+    }
+}

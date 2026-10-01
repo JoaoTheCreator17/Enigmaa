@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não era para você encontrar isso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--
+        Se você chegou até aqui...
+        Há coisas escondidas neste arquivo.
+    -->
+
+    <div class="ruido"></div>
+
+    <header>
+        <p class="codigo">ARQUIVO DESCONHECIDO</p>
+
+        <h1>VOCÊ ENCONTROU.</h1>
+
+        <p>Mas talvez não devesse ter continuado.</p>
+    </header>
+
+    <main>
+
+        <!-- =========================
+             FASE 1
+        ========================== -->
+
+        <section class="fase">
+
+            <span class="numero">01</span>
+
+            <h2>Comece pelo começo.</h2>
+
+            <div class="texto-enigma">
+                <p>O que parece normal pode esconder alguma coisa.</p>
+                <p>Letras também podem mentir quando estão juntas.</p>
+                <p>Há respostas que não precisam ser lidas inteiras.</p>
+                <p>Em alguns casos, basta prestar atenção.</p>
+            </div>
+
+            <p class="dica">
+                Talvez o início seja mais importante que o resto.
+            </p>
+
+            <input
+                id="resposta1"
+                type="text"
+                placeholder="Digite a resposta"
+            >
+
+            <button onclick="verificar1()">
+                DESBLOQUEAR
+            </button>
+
+            <p id="erro1" class="erro"></p>
+
+        </section>
+
+
+        <!-- =========================
+             FASE 2
+        ========================== -->
+
+        <section id="fase2" class="fase escondida">
+
+            <span class="numero">02</span>
+
+            <h2>Agora vá um pouco além.</h2>
+
+            <div class="lista-palavras">
+
+                <p>SONHO <strong>1</strong></p>
+                <p>MEDO <strong>2</strong></p>
+                <p>GATO <strong>1</strong></p>
+                <p>AR <strong>2</strong></p>
+                <p>ECO <strong>1</strong></p>
+                <p>DADO <strong>1</strong></p>
+                <p>OLHO <strong>1</strong></p>
+
+            </div>
+
+            <p class="dica">
+                Use cada número para escolher uma letra.
+            </p>
+
+            <input
+                id="resposta2"
+                type="text"
+                placeholder="Digite a resposta"
+            >
+
+            <button onclick="verificar2()">
+                DESBLOQUEAR
+            </button>
+
+            <p id="erro2" class="erro"></p>
+
+        </section>
+
+
+        <!-- =========================
+             FASE 3
+        ========================== -->
+
+        <section id="fase3" class="fase escondida">
+
+            <span class="numero">03</span>
+
+            <h2>Não leia. Caminhe.</h2>
+
+            <div class="grade">
+
+                <div>C</div>
+                <div>A</div>
+                <div>M</div>
+
+                <div>X</div>
+                <div>N</div>
+                <div>I</div>
+
+                <div>O</div>
+                <div>H</div>
+                <div>X</div>
+
+            </div>
+
+            <p class="movimentos">
+                → → ↓ ← ↓ ←
+            </p>
+
+            <p class="dica">
+                Comece pela letra C e siga os movimentos.
+            </p>
+
+            <input
+                id="resposta3"
+                type="text"
+                placeholder="Digite a resposta"
+            >
+
+            <button onclick="verificar3()">
+                DESBLOQUEAR
+            </button>
+
+            <p id="erro3" class="erro"></p>
+
+        </section>
+
+
+        <!-- =========================
+             FASE 4
+        ========================== -->
+
+        <section id="fase4" class="fase escondida">
+
+            <span class="numero">04</span>
+
+            <h2>Você chegou até aqui.</h2>
+
+            <p class="morse">
+                --- &nbsp;&nbsp; .-.. &nbsp;&nbsp; .-
+            </p>
+
+            <p class="dica">
+                Código Morse.
+            </p>
+
+            <input
+                id="resposta4"
+                type="text"
+                placeholder="Digite a resposta"
+            >
+
+            <button onclick="verificar4()">
+                DESBLOQUEAR
+            </button>
+
+            <p id="erro4" class="erro"></p>
+
+        </section>
+
+
+        <!-- =========================
+             FASE 5
+        ========================== -->
+
+        <section id="fase5" class="fase escondida">
+
+            <span class="numero">05</span>
+
+            <h2>Junte tudo.</h2>
+
+            <div class="respostas">
+
+                <p>OLHE</p>
+                <p>SEGREDO</p>
+                <p>CAMINHO</p>
+                <p>OLA</p>
+
+            </div>
+
+            <p class="dica">
+                A primeira resposta era uma instrução.
+            </p>
+
+            <input
+                id="resposta5"
+                type="text"
+                placeholder="Digite a resposta"
+            >
+
+            <button onclick="verificar5()">
+                FINALIZAR
+            </button>
+
+            <p id="erro5" class="erro"></p>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL NORMAL
+        ========================== -->
+
+        <section id="finalNormal" class="final escondida">
+
+            <p class="codigo">
+                ACESSO CONCEDIDO
+            </p>
+
+            <h2>VOCÊ CONSEGUIU.</h2>
+
+            <div class="mensagem-final">
+
+                <p>
+                    Eu te conheço desde o 5º ano e, com o tempo,
+                    percebi que comecei a gostar de você.
+                </p>
+
+                <p>
+                    Eu só queria que você soubesse disso. ❤️
+                </p>
+
+            </div>
+
+            <p class="pequeno">
+                Fim do arquivo.
+            </p>
+
+
+            <!-- =========================
+                 SEGREDO
+                 Só aparece quando o
+                 final normal é desbloqueado.
+            ========================== -->
+
+            <div class="area-secreta">
+
+                <p class="aviso-secreto">
+                    Há um final secreto. Descubra a ordem.
+                </p>
+
+                <div class="simbolos-secretos">
+
+                    <!--
+                        Os símbolos estão embaralhados
+                        visualmente.
+                    -->
+
+                    <button
+                        class="simbolo-secreto"
+                        data-secreto="3"
+                        aria-label="símbolo secreto"
+                    >
+                        ✦
+                    </button>
+
+                    <button
+                        class="simbolo-secreto"
+                        data-secreto="1"
+                        aria-label="símbolo secreto"
+                    >
+                        ♡
+                    </button>
+
+                    <button
+                        class="simbolo-secreto"
+                        data-secreto="4"
+                        aria-label="símbolo secreto"
+                    >
+                        ◐
+                    </button>
+
+                    <button
+                        class="simbolo-secreto"
+                        data-secreto="2"
+                        aria-label="símbolo secreto"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL SECRETO
+        ========================== -->
+
+        <section
+            id="finalSecreto"
+            class="final-secreto escondida"
+        >
+
+            <p class="codigo">
+                ARQUIVO OCULTO ENCONTRADO
+            </p>
+
+            <h2>VOCÊ ACHOU.</h2>
+
+            <div class="mensagem-secreta">
+
+                <p>
+                    Então você não parou no final...
+                </p>
+
+                <p>
+                    Isso significa que você realmente foi longe.
+                </p>
+
+                <p>
+                    E talvez exista uma coisa que eu não consegui
+                    colocar em nenhum dos enigmas.
+                </p>
+
+                <p class="destaque">
+                    Eu gosto de você. ❤️
+                </p>
+
+            </div>
+
+            <p class="pequeno">
+                Agora sim. Fim do arquivo.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
